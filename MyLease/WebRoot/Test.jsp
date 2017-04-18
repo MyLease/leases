@@ -1,4 +1,12 @@
-﻿ <!DOCTYPE html>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@page import="com.msun.entites.m_goods"%>
+<%@page import="com.msun.Dao.m_goodsDao"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE html>
 <html lang="en">
 
 	<head>
@@ -1239,44 +1247,42 @@
 							</ul>
 						</div>
 					</div>
+		
+          
+          
+          
+          
+          
 					<div class="mine_rent">
 						<div class="mine_rent_tou">
-							<span class="span">我的租出品</span>
+							<span class="span"><td>我的租出品</td></span>
 						</div>
+						<%
+          m_goodsDao itemsDao=new m_goodsDao();
+          ArrayList<m_goods> list=itemsDao.getAllItems();
+          if(list!=null&&list.size()>0)
+          {
+             for(int i=0;i<list.size();i++)
+             {
+                m_goods item=list.get(i);
+          %>
 						<div class="mine_rent_new">
 							<img src="image/demo/shop/product/10.jpg" />
 							<div class="mine_content">
-								<h3>相机</h3>
-								<span>2017-04-14 13:48:44</span>
-								<span>此处是描述，此处是描述，此处是描述，此处是描述。</span>
+								<h3><%=item.getGoods_name() %></h3>
+								<span><%=item.getGoods_protime() %></span>
+								<span><%=item.getGoods_detailInfo() %></span>
 							</div>
 							<div>
 								<button>确认交易成功</button>
 							</div>
 						</div>
-						<div class="mine_rent_new">
-							<img src="image/demo/shop/product/10.jpg" />
-							<div class="mine_content">
-								<h3>相机</h3>
-								<span>2017-04-14 13:48:44</span>
-								<span>此处是描述，此处是描述，此处是描述，此处是描述。</span>
-							</div>
-							<div>
-								<button>确认交易成功</button>
-							</div>
-						</div>
-						<div class="mine_rent_new">
-							<img src="image/demo/shop/product/10.jpg" />
-							<div class="mine_content
-							">
-								<h3>相机</h3>
-								<span>2017-04-14 13:48:44</span>
-								<span>此处是描述，此处是描述，此处是描述，此处是描述。</span>
-							</div>
-							<div>
-								<button>确认交易成功</button>
-							</div>
-						</div>
+						 <%
+             }
+           }
+            %>
+						
+						
 					</div>
 					<div class="mine_product">
 						<div class="mine_product_tou">

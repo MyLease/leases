@@ -11,10 +11,7 @@ import com.msun.entites.m_goods;
 
 public class m_goodsDao {
 
-	public static void insert(String username, String goods_name,int goods_price,int goods_yajin,int goods_count,
-								 int shortestTime,String goods_kinds,String goods_types,String goods_deal_type,
-								 String email,String phonenum,String address, String goods_detailInfo, 
-								 String requirement){
+	public static void insert(String goods_name,int goods_price,int goods_yajin,int goods_count, int shortestTime,String goods_kinds,String goods_detailInfo,String goods_requirement,String goods_deal_type,String goods_provider, String email,String phonenum,String goods_address, String goods_photo,String goods_types){
 		Connection conn=null;
 		PreparedStatement stmt=null;
 		boolean flag = true;
@@ -22,26 +19,23 @@ public class m_goodsDao {
 		try
 		{
 			conn=DBHelper.getConnection();
-			String sql = "insert into m_goods (goods_name,goods_price,goods_yajin,goods_count,goods_shortestTime,"
-						+ "goods_kinds,goods_types,goods_deal_type,email,phonenum,goods_address, goods_detailInfo,"
-						+ "goods_requirement, goods_provider) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "insert into m_goods (goods_name,goods_price,goods_yajin,goods_count,goods_shortestTime,goods_kinds,goods_detailInfo,goods_requirement,goods_deal_type,goods_provider,email,phonenum,goods_address,goods_photo,goods_types) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			stmt=conn.prepareStatement(sql);			
 			stmt.setString(1, goods_name);
 			stmt.setInt(2, goods_price);
 			stmt.setInt(3, goods_yajin);
 			stmt.setInt(4, goods_count);
-			
 			stmt.setInt(5, shortestTime);
 			stmt.setString(6, goods_kinds);
-			stmt.setString(7, goods_types);
-			stmt.setString(8, goods_deal_type);
-			
-			stmt.setString(9, email);
-			stmt.setString(10, phonenum);
-			stmt.setString(11, address);
-			stmt.setString(12, goods_detailInfo);
-			stmt.setString(13, requirement);
-			stmt.setString(14, username);
+			stmt.setString(7, goods_detailInfo);
+			stmt.setString(8, goods_requirement);
+			stmt.setString(9, goods_deal_type);
+			stmt.setString(10, goods_provider);
+			stmt.setString(11, email);
+			stmt.setString(12, phonenum);
+			stmt.setString(13, goods_address);
+			stmt.setString(14, goods_photo);
+			stmt.setString(15, goods_types);
 			stmt.executeUpdate();
 		}
 		catch(Exception ex){
@@ -73,16 +67,23 @@ public class m_goodsDao {
 					m_goods item=new m_goods();
 					item.setId(rs.getInt("id"));
 					item.setGoods_name(rs.getString("goods_name"));
-					item.setGoods_info(rs.getString("goods_info"));
-					item.setGoods_photo(rs.getString("goods_photo"));
-					item.setGoods_user(rs.getString("goods_user"));
 					item.setGoods_price(rs.getInt("goods_price"));
-					item.setGoods_location(rs.getString("goods_location"));
+					item.setGoods_yajin(rs.getInt("goods_yajin"));
+					item.setGoods_count(rs.getInt("goods_count"));
+					item.setGoods_shortestTime(rs.getInt("goods_shortestTime"));
+					item.setGoods_kinds(rs.getString("goods_kinds"));
+					item.setGoods_detailInfo(rs.getString("goods_detailInfo"));
+					item.setGoods_requirement(rs.getString("goods_requirement"));
+					item.setGoods_deal_type(rs.getString("goods_deal_type"));
+					item.setGoods_provider(rs.getString("goods_provider"));
+					item.setEmail(rs.getString("email"));
+					item.setPhonenum(rs.getString("phonenum"));
+					item.setGoods_address(rs.getString("goods_address"));
+					item.setGoods_photo(rs.getString("goods_photo"));
 					item.setGoods_protime(rs.getString("goods_protime"));
 					item.setGoods_score(rs.getInt("goods_score"));
-					item.setGoods_type(rs.getString("goods_type"));
 					item.setGoods_types(rs.getString("goods_types"));
-					item.setGoods_deal_type(rs.getString("goods_deal_type"));
+					
 					list.add(item);
 				}
 				return list;
@@ -119,16 +120,22 @@ public class m_goodsDao {
 					m_goods item=new m_goods();
 					item.setId(rs.getInt("id"));
 					item.setGoods_name(rs.getString("goods_name"));
-					item.setGoods_info(rs.getString("goods_info"));
-					item.setGoods_photo(rs.getString("goods_photo"));
-					item.setGoods_user(rs.getString("goods_user"));
 					item.setGoods_price(rs.getInt("goods_price"));
-					item.setGoods_location(rs.getString("goods_location"));
+					item.setGoods_yajin(rs.getInt("goods_yajin"));
+					item.setGoods_count(rs.getInt("goods_count"));
+					item.setGoods_shortestTime(rs.getInt("goods_shortestTime"));
+					item.setGoods_kinds(rs.getString("goods_kinds"));
+					item.setGoods_detailInfo(rs.getString("goods_detailInfo"));
+					item.setGoods_requirement(rs.getString("goods_requirement"));
+					item.setGoods_deal_type(rs.getString("goods_deal_type"));
+					item.setGoods_provider(rs.getString("goods_provider"));
+					item.setEmail(rs.getString("email"));
+					item.setPhonenum(rs.getString("phonenum"));
+					item.setGoods_address(rs.getString("goods_address"));
+					item.setGoods_photo(rs.getString("goods_photo"));
 					item.setGoods_protime(rs.getString("goods_protime"));
 					item.setGoods_score(rs.getInt("goods_score"));
-					item.setGoods_type(rs.getString("goods_type"));
 					item.setGoods_types(rs.getString("goods_types"));
-					item.setGoods_deal_type(rs.getString("goods_deal_type"));
 					return list;
 				
 				}

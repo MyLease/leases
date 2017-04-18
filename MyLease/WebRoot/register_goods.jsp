@@ -910,7 +910,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="form-group required">
 							<label class="col-sm-2 control-label" for="input-zone">所属类别</label>
 							<div class="col-sm-10">
-								<select name="whichKind" id="input-zone" class="form-control">
+								<select name="goods_kinds" id="input-zone" class="form-control">
 									<option value=""> --- 请选择 --- </option>
 									<option value="住行">住行</option>
 									<option value="居家">居家</option>
@@ -943,19 +943,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="form-group required">
 							<label class="col-sm-2 control-label" for="input-email">电子邮件</label>
 							<div class="col-sm-10">
-								<input type="email" name="user_email" value="" placeholder="E-Mail" id="input-email" class="form-control">
+								<input type="email" name="email" value="" placeholder="E-Mail" id="input-email" class="form-control">
 							</div>
 						</div>
 						<div class="form-group required">
 							<label class="col-sm-2 control-label" for="input-telephone">联系方式</label>
 							<div class="col-sm-10">
-								<input type="tel" name="user_phonenum" value="" placeholder="Telephone" id="input-telephone" class="form-control">
+								<input type="tel" name="phonenum" value="" placeholder="Telephone" id="input-telephone" class="form-control">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="input-fax">所租物品地址</label>
 							<div class="col-sm-10">
-								<input type="text" name="user_address" value="" placeholder="address" id="input-fax" class="form-control">
+								<input type="text" name="goods_address" value="" placeholder="address" id="input-fax" class="form-control">
 							</div>
 						</div>
 						<div class="form-group required">
@@ -967,13 +967,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="form-group required">
 							<label class="col-sm-2 control-label" for="input-postcode">要求</label>
 							<div class="col-sm-10">
-								<textarea name="requirement" rows="3" cols="149" style="border: 1px solid #ccc;"></textarea>
+								<textarea name="goods_requirement" rows="3" cols="149" style="border: 1px solid #ccc;"></textarea>
 							</div>
 						</div>
 						<div class="form-group required">
 							<label class="col-sm-2 control-label" for="input-postcode">图片上传</label>
 							<div class="col-sm-10" style="height: auto">
-							<iframe name="picture" frameborder="0" width="100%" height="450px" scrolling="no" src="inputimg/index.html" ></iframe>
+							<iframe name="goods_photo" frameborder="0" width="100%" height="450px" scrolling="no" src="inputimg/index.html" ></iframe>
 							</div>
 						</div>
 						<!-- form表单结束 -->

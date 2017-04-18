@@ -1,18 +1,8 @@
-﻿<%@page import="com.msun.utils.DBHelper"%>
-<%@page import="java.sql.*"%>
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%
-	Connection conn = DBHelper.getConnection();
-	String sql = "select * from m_goods";
-	Statement stmt = conn.createStatement();
-	ResultSet rs = stmt.executeQuery(sql);
-%>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -118,7 +108,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</div>
 							</div>
 			</div><br>
-			<%rs.next(); %>
 				<div class="row">
 					<div id="content" class="col-sm-12">
 
@@ -159,7 +148,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 														</div>
 														<div class="right-block">
 															<div class="caption">
-																<h4><a href="product1.jsp?id=<%=rs.getInt("id")%>" ><%=rs.getString("goods_name")%></a></h4>
+																<h4><a href="product.html">Cupim Bris</a></h4>
 																<div class="ratings">
 																	<div class="rating-box">
 																		<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
@@ -171,7 +160,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 																</div>
 
 																<div class="price">
-																	<span class="price-new">$<%=rs.getInt("goods_price")%>元/天</span>
+																	<span class="price-new">$50.00</span>
+																	<span class="price-old">$62.00</span>
 																</div>
 															</div>
 
@@ -1327,7 +1317,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="loader-section section-left"></div>
 	<div class="loader-section section-right"></div>
  </div>
-<script>
+			 <script>
 		function func11() {
         //iframe窗
         layer.open({
@@ -1341,7 +1331,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    maxmin: true, //开启最大化最小化按钮
 		    area: ['1000px', '660px'],
             shift: 2,
-            content: 'product.jsp', //iframe的url，no代表不显示滚动条
+            content: 'product.html', //iframe的url，no代表不显示滚动条
             
         });
     }

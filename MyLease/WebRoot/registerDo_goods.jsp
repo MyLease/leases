@@ -23,25 +23,28 @@
 	int goods_shortestTime = Integer.parseInt(request.getParameter("goods_shortestTime"));
 	//String goods_shortestTime = request.getParameter("goods_shortestTime");
 	//System.out.println("###" + goods_shortestTime + "###");
-	String goods_kinds = request.getParameter("whichKind");
+	String goods_kinds = request.getParameter("goods_kinds");
 	//System.out.println(goods_kinds);
-	String goods_types = request.getParameter("goods_types");
-	//System.out.println(goods_types);
-	String goods_deal_type = request.getParameter("goods_deal_type");
-	//System.out.println(goods_deal_type);
-	String email = request.getParameter("user_email");
-	//System.out.println(email);
-	String phonenum = request.getParameter("user_phonenum");
-	//System.out.println(phonenum);
-	String address = request.getParameter("user_address");
-	//System.out.println(address);
 	String goods_detailInfo = request.getParameter("goods_detailInfo");
 	//System.out.println(goods_detailInfo);
-	String requirement = request.getParameter("requirement");
+	String goods_requirement = request.getParameter("goods_requirement");
 	//System.out.println(requirement);
-	String username = (String)session.getAttribute("username");
-	System.out.println(username);
-	m_goodsDao.insert(username,goods_name, goods_price, goods_yajin, goods_count, goods_shortestTime, goods_kinds, goods_types, goods_deal_type, email, phonenum, address, goods_detailInfo, requirement);
+	String goods_deal_type = request.getParameter("goods_deal_type");
+	//System.out.println(goods_deal_type);
+	String goods_provider = request.getParameter("goods_provider");
+	//System.out.println(email);
+	String email = request.getParameter("email");
+	//System.out.println(email);
+	String phonenum = request.getParameter("phonenum");
+	//System.out.println(phonenum);
+	String goods_address = request.getParameter("goods_address");
+	//System.out.println(address);
+	String goods_photo = request.getParameter("goods_photo");
+	//System.out.println(goods_types);
+	String goods_types = request.getParameter("goods_types");
+	//System.out.println(goods_types);
+	
+	m_goodsDao.insert(goods_name,goods_price,goods_yajin,goods_count,goods_shortestTime,goods_kinds,goods_detailInfo,goods_requirement,goods_deal_type,goods_provider,email,phonenum,goods_address,goods_photo, goods_types);
 		
 %>
  	<script type="text/javascript">
