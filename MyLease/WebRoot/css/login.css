@@ -1,0 +1,125 @@
+*{
+	margin:0 ;
+	padding: 0;
+	text-decoration: none;
+}
+.login-boxtitle{
+	width: 1200px;
+	margin: 0 auto;
+}
+.login-boxtitle a img{
+	padding: 0px 0;
+	width: auto;
+	height: 90px;
+}
+.login-banner{
+	width: 100%;
+	height: 600px;
+	background: #00ABF0;
+}
+.login-main{
+	width: 1200px;
+	margin: 0 auto;
+}
+.login-banner-bg{
+	display: inline;
+	float: left;
+	padding: 94px 70px;
+}
+.login-box{
+	display: inline;
+	float: left;
+	width: 350px;
+	height: 450px;
+	background:#f8f8f8 ;
+	margin: 55px 30px;
+	padding: 20px 30px;
+	}
+.login-box h3{
+	font-size: 18px;
+	text-align: center;
+	height: 45px;
+	line-height: 45px;
+}
+
+.login-form span{
+	font-size: 15px;
+}
+#laber2,#password{
+	width: 302px;
+	height: 45px;
+	border: 1px solid #E6E6E3;
+	float: right;
+}
+label img{
+	width: 25px;
+	height: 25px;
+}
+label{
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	float: left;
+	border: 1px solid #E6E6E3;
+	background-color: #CCCCCC;
+	padding: 10px;
+	
+}
+/*#laber1{
+	top:0 ;
+	left: 1px;
+}
+#laber2{
+	top:100px ;
+	left:1px ;
+}*/
+.user-name,.user-pass{
+	width: 350px;
+	height: 47px;
+	margin: 20px 0;
+}
+
+#remember-me{
+	display: inline;
+	float: left;
+	padding: 10px 0;
+}
+#login-auto{
+	display: inline;
+	float: right;
+	padding: 10px 0;
+}
+.am-btn{
+	width: 348px;
+	height: 45px;
+	border: none;
+	color: #fff;
+	font-size: 18px;
+	background: #00ABF0;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	cursor:pointer;
+}
+.clear{
+	height:70px;
+}
+.am-fr{
+	color: #666;
+	display: inline;
+	float: right;
+	margin: 0 20px;
+	bottom:20px;
+}
+.zcnext{
+	color: #666;
+	display: inline;
+	float: right;
+	margin: 0 20px;
+}
+.am-fr:hover,.zcnext:hover{
+	color: #00ABF0;
+}
+.bottom{
+	
+	bottom:20px;
+}

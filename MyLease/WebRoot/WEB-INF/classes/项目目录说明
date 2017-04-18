@@ -1,0 +1,20 @@
+MyLease
+-src（放Java代码）      
+   -com.msun
+              -Dao    写一写数据库操作
+              -entites  写实体类
+              -filter    过滤器（用得到的话就写）
+              -listener  监听器（用得到的话就写）
+              -service   业务类
+              -servlet   控制器
+              -utils     写工具类
+-resources （存放一些资源）
+        c3p0-config.xml     c3p0连接池配置文件
+-junit-test  （存放Junit测试代码） 
+     -com.msun.utils.Test    所有utils包下的Java代码的测试类全写在这个包下面
+     -..........................Test    其他的包的测试类命名规则如上-------路径名+Test
+-Webroot
+    -META-INF
+    -WEB-INF (其他有需要文件夹自己建即可)
+       -lib 
+       web.xml   
