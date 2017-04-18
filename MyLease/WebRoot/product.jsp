@@ -1,4 +1,13 @@
-﻿
+﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<%
+	int id = Integer.parseInt(request.getParameter("id"));
+	String sql = "select * from m_goods where id = " + id;
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
