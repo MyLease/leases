@@ -40,16 +40,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
            <tr>
            <td><%=item.getId() %></td>
            <td><%=item.getGoods_name() %></td>
-           <td><%=item.getGoods_info() %></td>
-           <td><%=item.getGoods_photo() %></td>
-           <td><%=item.getGoods_user() %></td>
            <td><%=item.getGoods_price() %></td>
-           <td><%=item.getGoods_location() %></td>
+           <td><%=item.getGoods_yajin() %></td>
+           <td><%=item.getGoods_count() %></td>
+           <td><%=item.getGoods_shortestTime() %></td>
+           <td><%=item.getGoods_kinds() %></td>
+           <td><%=item.getGoods_detailInfo() %></td>
+           <td><%=item.getGoods_requirement() %></td>
+           <td><%=item.getGoods_deal_type() %></td>
+           <td><%=item.getGoods_provider() %></td>
+           <td><%=item.getEmail() %></td>
+           <td><%=item.getPhonenum() %></td>
+           <td><%=item.getGoods_address() %></td>
+           <td><%=item.getGoods_photo() %></td>
            <td><%=item.getGoods_protime() %></td>
            <td><%=item.getGoods_score() %></td>
-           <td><%=item.getGoods_type() %></td>
            <td><%=item.getGoods_types() %></td>
-           <td><%=item.getGoods_deal_type() %></td>
+           
+           <td><%=item.getGoods_types() %></td>
+           
            <td><a href="newsDo.jsp?id=<%=item.getId() %>">删除</a></td>
            </tr>
            <%

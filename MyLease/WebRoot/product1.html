@@ -1,14 +1,4 @@
-﻿<%@page import="com.msun.utils.DBHelper"%>
-<%@page import="java.sql.*" %>
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-<%
-	int id = Integer.parseInt(request.getParameter("id"));
-	String sql = "select * from m_goods where id = " + id;
-%>
+﻿
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,11 +64,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="container">
 		
 		<div class="row" id="row">
+			
 			<div class="sidebar-menu col-md-3 col-sm-6 col-xs-12 ">
 				<div class="responsive so-megamenu ">
 					<div class="so-vertical-menu no-gutter compact-hidden">
 						<nav class="navbar-default">	
+							
 							<div class="container-megamenu vertical  ">
+								
 								<div id="menuHeading">
 									<div class="megamenuToogle-wrapper">
 										<div class="megamenuToogle-pattern">
@@ -849,23 +842,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								
 							</div>
 
-<%
-	Connection conn = DBHelper.getConnection();
-	/*
-	if(conn != null) {
-		System.out.println("不为空");
-	} else {
-		System.out.println("空");
-	}
-	*/
-	Statement stmt = conn.createStatement();
-	ResultSet rs = stmt.executeQuery(sql);
-	rs.next();
-%>
-
 							<div class="content-product-right col-sm-6 col-xs-12">
 								<div class="title-product">
-									<h1><%=rs.getString("goods_name")%></h1>
+									<h1>Bint Beef</h1>
 								</div>
 								<!-- Review ---->
 								<div class="box-review form-group">
@@ -885,7 +864,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 								<div class="product-label form-group">
 									<div class="product_page_price price" itemprop="offerDetails" itemscope="" itemtype="http://data-vocabulary.org/Offer">
-										<span class="price-new" itemprop="price">$<%=rs.getInt("goods_price") %>元/天</span>
+										<span class="price-new" itemprop="price">$114.00</span>
+										<span class="price-old">$122.00</span>
 									</div>
 									<div class="stock"><span>Availability:</span> <span class="status-stock">In Stock</span></div>
 								</div>
